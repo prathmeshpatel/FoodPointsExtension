@@ -4,7 +4,11 @@ $("h1").click(function() {
 });
 
 window.addEventListener('DOMContentLoaded', function() {
-    // your button here
+    //current tab url
+    chrome.tabs.query({currentWindow: true, active: true}, function(tabs){
+        console.log(tabs[0].url);
+    });
+    //Button
     var link = document.getElementById('btnOpenNewTab');
     // onClick's logic below:
     link.addEventListener('click', function() {
