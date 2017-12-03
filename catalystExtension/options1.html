@@ -1,0 +1,74 @@
+<html>
+<head>
+<script src="http://code.jquery.com/jquery-latest.min.js">
+</script>
+<script type="text/javascript">
+function changecat() {
+    var selectHTML = "";
+
+    var A = ["Big Mac", "Fish Filet", "Iced Tea", "Milkshake"];
+    var B = ["Broccoli and Cheese Soup", "Black Bean Burger", "	Strawberry Smoothie", "Chipotle Turkey Sandwich"];
+    var C = ["Soup", "Juice", "Coffee", "Tea", "Others"];
+
+    if (document.getElementById("meal").value == "A") {
+        var select = document.getElementById('category').options.length;
+
+        for (var i = 0; i < select; i++) {
+            document.getElementById('category').options.remove(i);
+        }
+
+        for (var i = 0; i < A.length; i++) {
+            var newSelect = document.createElement('option');
+            selectHTML = "<option value='" + A[i] + "'>" + A[i] + "</option>";
+            newSelect.innerHTML = selectHTML;
+            document.getElementById('category').add(newSelect);
+        }
+    }
+
+    else if (document.getElementById("meal").value == "B") {
+        var select = document.getElementById('category').options.length;
+
+        for (var i = 0; i < select; i++) {
+            document.getElementById('category').options.remove(i);
+        }
+
+        for (var i = 0; i < B.length; i++) {
+            var newSelect = document.createElement('option');
+            selectHTML = "<option value='" + B[i] + "'>" + B[i] + "</option>";
+            newSelect.innerHTML = selectHTML;
+            document.getElementById('category').add(newSelect);
+        }
+    }
+
+    else if (document.getElementById("project").value == "C") {
+        var select = document.getElementById('category').options.length;
+
+        for (var i = 0; i < select; i++) {
+            document.getElementById('category').options.remove(i);
+        }
+
+        for (var i = 0; i < C.length; i++) {
+            var newSelect = document.createElement('option');
+            selectHTML = "<option value='" + C[i] + "'>" + C[i] + "</option>";
+            newSelect.innerHTML = selectHTML;
+            document.getElementById('category').add(newSelect);
+        }
+    }
+}
+
+</script>
+
+</head>
+<body>
+  <select name="meal" id="meal" onchange="changecat();">
+    <option value="">Select</option>
+    <option value="A">A</option>
+    <option value="B">B</option>
+    <option value="C">C</option>
+</select>
+
+<select name="category" id="category">
+    <option value="">Select</option>
+</select>
+</body>
+</html>
