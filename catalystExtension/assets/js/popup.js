@@ -5,17 +5,10 @@ $("h1").click(function() {
 
 window.addEventListener('DOMContentLoaded', function() {
     //current tab url
-    var pageUrl;
     chrome.tabs.query({currentWindow: true, active: true}, function(tabs){
         console.log(tabs[0].url);
-        pageUrl = tabs[0].url;
+        hideTabs(tabs[0].url);
     });
-    if(pageUrl.indexOf('https://my.duke.edu/students/dashboard') >= 0){
-       $("#btnOpenNewTab").hide();
-    }
-    else {
-       $("#loadPoints").hide();
-    }
     //Button
     var link = document.getElementById('btnOpenNewTab');
     // onClick's logic below:
@@ -28,6 +21,15 @@ window.addEventListener('DOMContentLoaded', function() {
 $(".fa-arrow-circle-down").click(function() {
     $("#mealList").slideToggle("fast");
 });
+
+function hideTabs(pageUrl){
+    if(pageUrl.indexOf('https://my.duke.edu/students/dashboard'){
+        $("#btnOpenNewTab").hide();
+    }
+    else {
+        $("#loadPoints").hide();
+    }
+}
 
 document.getElementById("loadPoints").addEventListener('click', () => {
     console.log("Popup DOM fully loaded and parsed");
