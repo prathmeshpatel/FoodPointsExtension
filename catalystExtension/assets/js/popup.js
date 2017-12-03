@@ -19,6 +19,26 @@ $(".fa-arrow-circle-down").click(function() {
     $("#mealList").slideToggle("fast");
 });
 
+function setDOMInfo(info) {
+  document.getElementById('loadPoints').textContent  = info;
+}
+
+window.addEventListener('DOMContentLoaded', function () {
+  // ...query for the active tab...
+  chrome.tabs.query({
+    active: true,
+    currentWindow: true
+  }, function (tabs) {
+    // ...and send a request for the DOM info...
+    chrome.tabs.sendMessage(
+        tabs[0].id,
+        {from: 'popup', subject: 'DOMInfo'},
+        // ...also specifying a callback to be called 
+        //    from the receiving end (content script)
+        setDOMInfo);
+  });
+});
+
 //Functions used to generate difference in days between now and start of the year
 function getDateDifference(){
     var dateDifference;
