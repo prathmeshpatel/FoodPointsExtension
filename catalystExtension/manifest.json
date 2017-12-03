@@ -15,6 +15,7 @@
         "storage",
         "notifications",
         "contextMenus"
-    ]
+    ],
+  "options_page":"picker1.html"
 }
 
