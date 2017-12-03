@@ -1,4 +1,11 @@
 // makes the days - sorry for mixing my js with my html
+var monday = [];
+var tueday = [];
+var wednesday = [];
+var thursday = [];
+var friday = [];
+var saturday = [];
+
 var weekday = new Array(7);
 weekday[0] =  "Sunday";
 weekday[1] = "Monday";
@@ -26,6 +33,7 @@ for(var i = 0; i < 7; i++) {
 
 // removes food item when trash is clicked
 $(".dayMeals").on("click", "span", function(event) {
+    weeklyCost -=
     $(this).parent().fadeOut(1000, function() {
         $(this).remove();
     });
@@ -39,6 +47,11 @@ $(".dayMeals").on("click", function() {
     if(restaurant != null && meal != null) {
         $(this).append("<p class=\"nomargin\"><span class=\"delete\"><i class='fa fa-trash'></i></span>" + restaurant + " - " + meal + "</p>");
     }
-    totalCost += mealsByCategory[$("#meal").val()][$("#category").val()];
-    $("#weeklySpending").text(totalCost);
+    weeklyCost += mealsByCategory[$("#meal").val()][$("#category").val()];
+    $("#weeklySpending").text(weeklyCost);
+    if(weeklyCost >= 146.72) {
+        $("#weeklySpending").css("color", "red");
+    } else {
+        $("#weeklySpending").css("color", "green");
+    }
 });

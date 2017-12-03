@@ -17,8 +17,9 @@ function changecat(value) {
     else {
         var catOptions = "";
         for (var categoryId in mealsByCategory[value]) {
-            catOptions += "<option>" + mealsByCategory[value][categoryId] + "</option>";
+            catOptions += "<option>" + categoryId + "</option>";
         }
+        // mealsByCategory[$("#meal").val()][categoryId]
         document.getElementById("category").innerHTML = catOptions;
     }
 }
