@@ -12,10 +12,6 @@ window.addEventListener('DOMContentLoaded', function() {
     link.addEventListener('click', function() {
         var newURL = "https://my.duke.edu/students/dashboard#continuing";
         chrome.tabs.create({ url: newURL });
-        var elements = document.getElementsByTagName("TD");
-        var currentPoints = elements[1].innerHTML;
-        alert(currentPoints);
-        $("#numPoints span").text(currentPoints);
     });
 });
 
