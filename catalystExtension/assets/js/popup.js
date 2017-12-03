@@ -91,7 +91,6 @@ function getDateDifference(){
             dateDifference = dayDiff(new Date(2017,10,21),startDate) - 4;
         }
         if(greaterThanDay(today,new Date(2017,10,26))){
-            alert("I run");
             dateDifference = dayDiff(today,startDate) - 8;
         }
     }
