@@ -23,7 +23,7 @@ $(".fa-arrow-circle-down").click(function() {
 });
 
 function hideTabs(pageUrl){
-    if(pageUrl.indexOf('https://my.duke.edu/students/dashboard'){
+    if(pageUrl.indexOf('https://my.duke.edu/students/dashboard') >= 0){
         $("#btnOpenNewTab").hide();
     }
     else {
