@@ -78,29 +78,30 @@ function pointsPerDay(points){
 function getDateDifference(){
     var dateDifference;
     var today = new Date();
-    if (today.getFullYear == 2017){
-        var startDate = new Date(2017,8,21);
+    if (today.getFullYear() == 2017){
+        var startDate = new Date(2017,7,21);
         dateDifference = dayDiff(today,startDate) - 2;
-        if (sameDay(today,new Date(2017, 10, 7)) || sameDay(today,new Date(2017, 10, 8))){
-            dateDifference = dayDiff(new Date(2017,10,6),startDate) - 2;
+        if (sameDay(today,new Date(2017, 9, 7)) || sameDay(today,new Date(2017, 9, 8))){
+            dateDifference = dayDiff(new Date(2017,9,6),startDate) - 2;
         }
-        if (greaterThanDay(today,new Date(2017,10,8))){
+        if (greaterThanDay(today,new Date(2017,9,8))){
             dateDifference = dayDiff(today,startDate) - 4;
         }
-        if(greaterThanDay(today,new Date(2017,11,22)) && greaterThanDay(new Date(2017,11,27),today)){
-            dateDifference = dayDiff(new Date(2017,11,21),startDate) - 4;
+        if(greaterThanDay(today,new Date(2017,10,22)) && greaterThanDay(new Date(2017,10,27),today)){
+            dateDifference = dayDiff(new Date(2017,10,21),startDate) - 4;
         }
-        if(greaterThanDay(today,new Date(2017,11,26))){
+        if(greaterThanDay(today,new Date(2017,10,26))){
+            alert("I run");
             dateDifference = dayDiff(today,startDate) - 8;
         }
     }
     if(today.getFullYear() == 2018){
-        var startDate = new Date(2018,1,8);
+        var startDate = new Date(2018,0,8);
         dateDifference = dayDiff(today,startDate) -1;
-        if(greaterThanDay(today,new Date(2018,3,9)) && greaterThanDay(new Date(2018,3,19),today)){
-            dateDifference = dayDiff(new Date(2018,3,9),startDate) - 1;
+        if(greaterThanDay(today,new Date(2018,2,9)) && greaterThanDay(new Date(2018,2,19),today)){
+            dateDifference = dayDiff(new Date(2018,2,9),startDate) - 1;
         }
-        if(greaterThanDay(today,new Date(2018,3,18))){
+        if(greaterThanDay(today,new Date(2018,2,18))){
             dateDifference = dayDiff(new Date(today,startDate)) - 10;
         }
     }
@@ -118,7 +119,8 @@ function sameDay(d1, d2) {
 }
 
 function greaterThanDay(d1, d2) {
-    return (d1.getFullYear() === d2.getFullYear() &&
+    return (d1.getFullYear() == d2.getFullYear() &&
         d1.getMonth() > d2.getMonth()) || (d1.getFullYear() === d2.getFullYear() && d1.getMonth() === d2.getMonth() &&
         d1.getDate() > d2.getDate());
+}
 }
