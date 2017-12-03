@@ -51,6 +51,7 @@ function editContent(str){
 function calculateTargetPointsDay(points){
         var plans = {"A": 2340.28, "B": 2806.83, "C": 3107.83, "D": 3334.65, "E": 3636.73, "F": 766.48, "H": 490.20, "I": 566.53,
             "J": 1655.50};
+        console.log(getDateDifference());
         var e = document.getElementById("choosePlanBox");
         var currentPlan = e.options[e.selectedIndex].value;
         var totalPoints = plans[currentPlan];
