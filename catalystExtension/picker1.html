@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Food Point Manager</title>
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    </head>
+    <body>
+        <header class="jumbotron">
+            <h1>Meal Planner</h1>
+        </header>
+
+        <!-- meal selectors -->
+        <select name="meal" id="meal" onChange="changecat(this.value);">
+            <option value="" disabled selected>Select</option>
+            <option value="A">Au Bon Pain</option>
+            <option value="B">Cafe</option>
+            <option value="C">Divinity Cafe</option>
+            <option value="D">Ginger & Soy</option>
+            <option value="E">Gyotaku</option>
+            <option value="F">Il Forno</option>
+            <option value="G">JB's Roasts and Chops</option>
+            <option value="H">Joe Van Gogh</option>
+            <option value="I">Loop Pizza Grill</option>
+            <option value="J">McDonald's</option>
+        </select>
+        <select name="category" id="category">
+            <option value="" disabled selected>Select</option>
+        </select>
+
+        <!-- calendar -->
+        <table id="calendar">
+
+        </table>
+
+        <script type="text/javascript" src="dropdown.js"></script>
+        <script type="text/javascript" src="select.js"></script>
+    </body>
+</html>
