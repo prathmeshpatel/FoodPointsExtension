@@ -19,7 +19,7 @@ $(".fa-arrow-circle-down").click(function() {
     $("#mealList").slideToggle("fast");
 });
 
-document.getElementById("loadPoints).addEventListener('click', () => {
+document.getElementById("loadPoints").addEventListener('click', () => {
     console.log("Popup DOM fully loaded and parsed");
 
     function modifyDOM() {
