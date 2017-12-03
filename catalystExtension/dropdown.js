@@ -10,11 +10,11 @@ weekday[6] = "Saturday";
 
 for(var i = 0; i < 7; i++) {
     var d = new Date();
-    var dayPlan = "<div class=\"dayOfWeek\">";
+    var dayPlan = "<div class=\"dayContainer\">";
     if(d.getDay() + i > 6) {
-        dayPlan += "<h1>" + weekday[d.getDay() + i - 6] + "</h1>";
+        dayPlan += "<h1 class=\"dayOfWeek\">" + weekday[d.getDay() + i - 6] + "</h1>";
     } else {
-        dayPlan += "<h1>" + weekday[d.getDay() + i] + "</h1>";
+        dayPlan += "<h1 class=\"dayOfWeek\">" + weekday[d.getDay() + i] + "</h1>";
     }
     dayPlan += "<div class=\"dayMeals\"></div>";
     dayPlan += "</div>";
