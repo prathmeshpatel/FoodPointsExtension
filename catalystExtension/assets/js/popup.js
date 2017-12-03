@@ -90,6 +90,9 @@ function pointsPerDay(points){
         var pointsRem = points / daysRemaining;
         console.log(pointsRem);
         $('#pointsPerDayText span').text("$" + pointsRem.toFixed(2));
+        var pointsRemWeek = pointsRem * 7;
+        $('#pointsPerDayWeek span').text("$" + pointsRemWeek.toFixed(2));
+        $('#limit').text("$" + pointsRem.toFixed(2));
 }
 
 //Functions used to generate difference in days between now and start of the year
