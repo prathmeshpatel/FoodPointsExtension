@@ -1,61 +1,22 @@
 <html>
 <head>
-<script src="http://code.jquery.com/jquery-latest.min.js">
-</script>
 <script type="text/javascript">
-function changecat() {
-    var selectHTML = "";
-
-    var A = ["Soup", "Juice", "Tea", "Others"];
-    var B = ["Soup", "Juice", "Water", "Others"];
-    var C = ["Soup", "Juice", "Coffee", "Tea", "Others"];
-
-    if (document.getElementById("meal").value == "A") {
-        var select = document.getElementById('category').options.length;
-
-        for (var i = 0; i < select; i++) {
-            document.getElementById('category').options.remove(i);
-        }
-
-        for (var i = 0; i < A.length; i++) {
-            var newSelect = document.createElement('option');
-            selectHTML = "<option value='" + A[i] + "'>" + A[i] + "</option>";
-            newSelect.innerHTML = selectHTML;
-            document.getElementById('category').add(newSelect);
-        }
-    }
-
-    else if (document.getElementById("meal").value == "B") {
-        var select = document.getElementById('category').options.length;
-
-        for (var i = 0; i < select; i++) {
-            document.getElementById('category').options.remove(i);
-        }
-
-        for (var i = 0; i < B.length; i++) {
-            var newSelect = document.createElement('option');
-            selectHTML = "<option value='" + B[i] + "'>" + B[i] + "</option>";
-            newSelect.innerHTML = selectHTML;
-            document.getElementById('category').add(newSelect);
-        }
-    }
-
-    else if (document.getElementById("project").value == "C") {
-        var select = document.getElementById('category').options.length;
-
-        for (var i = 0; i < select; i++) {
-            document.getElementById('category').options.remove(i);
-        }
-
-        for (var i = 0; i < C.length; i++) {
-            var newSelect = document.createElement('option');
-            selectHTML = "<option value='" + C[i] + "'>" + C[i] + "</option>";
-            newSelect.innerHTML = selectHTML;
-            document.getElementById('category').add(newSelect);
-        }
-    }
+var mealsByCategory = {
+    A: ["Soup", "Juice", "Tea", "Others"],
+    B: ["Soup", "Juice", "Water", "Others"],
+    C: ["Soup", "Juice", "Coffee", "Tea", "Others"]
 }
 
+    function changecat(value) {
+        if (value.length == 0) document.getElementById("category").innerHTML = "<option></option>";
+        else {
+            var catOptions = "";
+            for (categoryId in mealsByCategory[value]) {
+                catOptions += "<option>" + mealsByCategory[value][categoryId] + "</option>";
+            }
+            document.getElementById("category").innerHTML = catOptions;
+        }
+    }
 </script>
 <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -68,15 +29,14 @@ function changecat() {
   </script>
 </head>
 <body>
-  <select name="meal" id="meal" onchange="changecat();">
-    <option value="">Select</option>
+  <select name="meal" id="meal" onChange="changecat(this.value);">
+    <option value="" disabled selected>Select</option>
     <option value="A">A</option>
     <option value="B">B</option>
     <option value="C">C</option>
 </select>
-
 <select name="category" id="category">
-    <option value="">Select</option>
+    <option value="" disabled selected>Select</option>
 </select>
 
 <form>
