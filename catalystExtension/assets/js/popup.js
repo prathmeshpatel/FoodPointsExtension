@@ -1,5 +1,3 @@
-var plans = {"A": 2340.28, "B": 2806.83, "C": 3107.83, "D": 3334.65, "E": 3636.73, "F": 766.48, "H": 490.20, "I": 566.53,
-        "J": 1655.50};
 
 $("h1").click(function() {
     $(this).toggleClass("devil");
@@ -19,7 +17,7 @@ $(".fa-arrow-circle-down").click(function() {
     $("#mealList").slideToggle("fast");
 });
 
-document.getElementById("loadPoints).addEventListener('click', () => {
+document.getElementById("loadPoints").addEventListener('click', () => {
     console.log("Popup DOM fully loaded and parsed");
 
     function modifyDOM() {
@@ -37,8 +35,30 @@ document.getElementById("loadPoints).addEventListener('click', () => {
         //Here we have just the innerHTML and not DOM structure
         console.log('Popup script:')
         console.log(results[0]);
+        editContent(results[0]);
     });
 });
+
+function editContent(str){
+        $('#numPoints span').text(str);
+}
+
+function updatePointsPerDay(points){
+        var daysRemaining = 109 - getDateDifference();
+        var pointsRem = points / daysRemaining;
+    return pointsRem;
+}
+
+function calculateTargetPointsDay(){
+        var plans = {"A": 2340.28, "B": 2806.83, "C": 3107.83, "D": 3334.65, "E": 3636.73, "F": 766.48, "H": 490.20, "I": 566.53,
+            "J": 1655.50};
+        var e = document.getElementById("choosePlanBox");
+        var currentPlan = e.options[e.selectedIndex].value;
+        var totalPoints = plans[currentPlan];
+        var pointsPerDay = totalPoints / 109;
+        var targetPoints = totalPoints - getDateDifference() * pointsPerDay;
+    return targetPoints;
+}
 
 //Functions used to generate difference in days between now and start of the year
 function getDateDifference(){

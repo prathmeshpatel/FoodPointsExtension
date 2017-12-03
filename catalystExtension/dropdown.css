@@ -1,18 +1,126 @@
-td {
-    width: 100px;
-    height:100px;
-    border: 1px solid black;
+/*setting up the window*/
+@-ms-viewport {
+    width: device-width;
 }
 
-.nopadding {
-    padding: 0;
-    margin: 0;
+body {
+    -ms-overflow-style: scrollbar;
 }
 
-#calendarHolder {
+@media screen and (max-width: 480px) {
+
+    html, body {
+        min-width: 320px;
+    }
+
+}
+
+body {
+    background: #fff;
+}
+
+body.is-loading *, body.is-loading *:before, body.is-loading *:after {
+    -moz-animation: none !important;
+    -webkit-animation: none !important;
+    -ms-animation: none !important;
+    animation: none !important;
+    -moz-transition: none !important;
+    -webkit-transition: none !important;
+    -ms-transition: none !important;
+    transition: none !important;
+}
+
+
+/*bulk of the app*/
+#title {
+    color: rgb(255, 239, 213);
+    font-size: 50px;
+    text-align: center;
+
+}
+
+.jumbotron {
+    margin-bottom: 0;
+    background: rgb(53,53,53);
+    padding-bottom: 32px;
+    padding-top: 32px;
+
+}
+
+#whole {
+    background-image: url(food.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/*#cutLines {
+    width: 75%;
+}*/
+select {
+    width: 33%;
+    background: rgb(255, 239, 213);
+    height: 50%;
+    margin-top: 20px;
+    color: rgb(53,53,53);
+}
+
+#footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 75px;
+    background: rgb(53,53,53);
+}
+
+#weeklySpending {
+    color: white;
+}
+
+
+/*for the days of the week and its meals*/
+#spacing-top {
+    height: 50px;
+}
+
+#spacing-bottom {
+    height: 125px;
+}
+
+.dayOfWeek {
+    border-bottom: 1px solid black;
+    text-align: center;
+}
+
+.dayMeals {
+    min-height: 100px;
+}
+
+.nomargin {
+    margin-bottom: 0;
+}
+
+#days {
+    opacity: .85;
+    width: 70%;
     margin: 0 auto;
+    background: white;
+    text-align: center;
 }
 
-#calendar {
-    margin: 0 auto;
+.delete {
+    background: #e74c3c;
+    height: 30px;
+    margin-right: 20px;
+    text-align: center;
+    color: white;
+    width: 0px;
+    display: inline-block;
+    transition: 0.2s linear;
+    opacity: 0;
+}
+.nomargin:hover .delete {
+    width: 40px;
+    opacity: 1.0;
 }
