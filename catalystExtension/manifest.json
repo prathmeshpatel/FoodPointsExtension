@@ -5,23 +5,6 @@
   "description": "This extension tracks your overall food points.",
   "version": "1.0",
 
-  "content_scripts": [
-        {
-            "matches": [
-                "https://my.duke.edu/students/dashboard#continuing/"
-            ],
-            "js": [
-                "assets/js/lib/jquery-3.2.1.min.js",
-                "content.js"
-            ]
-        }
-   ],
-  // "icons": {
-  //   "128": "icon128.png",
-  //   "48": "icon48.png",
-  //   "16": "icon16.png"
-  // },
-
   "browser_action": {
     "default_popup": "popup.html"
   },
@@ -34,10 +17,4 @@
         "contextMenus"
     ]
 }
-          "storage",
-          "notifications",
-          "contextMenus"
-        ],
 
-  "options_page": "options1.html"
-}
