@@ -4,15 +4,6 @@ td {
     border: 1px solid black;
 }
 
-.nopadding {
-    padding: 0;
-    margin: 0;
-}
-
-#calendarHolder {
-    margin: 0 auto;
-}
-
-#calendar {
-    margin: 0 auto;
+.dayMeals {
+    height: 100px;
 }
