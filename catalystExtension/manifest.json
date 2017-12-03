@@ -3,7 +3,23 @@
   "name": "Food Points Tracker",
   "description": "This extension tracks your overall food points.",
   "version": "1.0",
+<<<<<<< HEAD
 
+=======
+  // "icons": {
+  // },
+  "content_scripts": [
+        {
+            "matches": [
+                "https://my.duke.edu/students/dashboard#continuing/"
+            ],
+            "js": [
+                "assets/js/lib/jquery-3.2.1.min.js",
+                "content.js"
+            ]
+        }
+   ],
+>>>>>>> 44521be3cd9f9ce45486edc0a01368d7a34e3224
   "browser_action": {
     "default_popup": "popup.html"
   },
@@ -14,8 +30,16 @@
   },
 
   "permissions": [
+<<<<<<< HEAD
         "storage",
         "notifications",
         "contextMenus"
     ]
 }
+=======
+          "storage",
+          "notifications",
+          "contextMenus"
+        ]
+}
+>>>>>>> 44521be3cd9f9ce45486edc0a01368d7a34e3224
