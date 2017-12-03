@@ -54,7 +54,9 @@ function calculateTargetPointsDay(points){
         console.log(getDateDifference());
         var e = document.getElementById("choosePlanBox");
         var currentPlan = e.options[e.selectedIndex].value;
+        console.log(currentPlan);
         var totalPoints = plans[currentPlan];
+        console.log(totalPoints);
         var pointsPerDay = totalPoints / 109;
         var targetPoints = totalPoints - getDateDifference() * pointsPerDay;
         console.log(targetPoints);
