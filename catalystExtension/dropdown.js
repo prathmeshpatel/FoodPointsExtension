@@ -33,7 +33,15 @@ for(var i = 0; i < 7; i++) {
 
 // removes food item when trash is clicked
 $(".dayMeals").on("click", "span", function(event) {
-    weeklyCost -=
+    weeklyCost -= mealsByCategory[$(".restSpan").text()][$(".restSpan + .mealSpan").text()];
+    console.log(mealsByCategory[$(".restSpan").text()][$(".restSpan + .mealSpan").text()]);
+    weeklyCost = Math.round(weeklyCost * 100) / 100;
+    $("#weeklySpending").text(weeklyCost);
+    if(weeklyCost >= 146.72) {
+        $("#weeklySpending").css("color", "red");
+    } else {
+        $("#weeklySpending").css("color", "green");
+    }
     $(this).parent().fadeOut(1000, function() {
         $(this).remove();
     });
@@ -45,9 +53,10 @@ $(".dayMeals").on("click", function() {
     var restaurant = $("#meal").val();
     var meal = $("#category").val();
     if(restaurant != null && meal != null) {
-        $(this).append("<p class=\"nomargin\"><span class=\"delete\"><i class='fa fa-trash'></i></span>" + restaurant + " - " + meal + "</p>");
+        $(this).append("<p class=\"nomargin\"><span class=\"delete\"><i class='fa fa-trash'></i></span>" + "<span class=\"restSpan\">" + restaurant + "</span>"+ " - " + "<span class=\"mealSpan\">" + meal + "</span>" + "</p>");
     }
     weeklyCost += mealsByCategory[$("#meal").val()][$("#category").val()];
+    weeklyCost = Math.round(weeklyCost * 100) / 100;
     $("#weeklySpending").text(weeklyCost);
     if(weeklyCost >= 146.72) {
         $("#weeklySpending").css("color", "red");
