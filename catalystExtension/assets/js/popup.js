@@ -37,8 +37,13 @@ document.getElementById("loadPoints").addEventListener('click', () => {
         //Here we have just the innerHTML and not DOM structure
         console.log('Popup script:')
         console.log(results[0]);
+        editContent(results[0]);
     });
 });
+
+function editContent(str){
+        $('#numPoints span').text(str);
+}
 
 //Functions used to generate difference in days between now and start of the year
 function getDateDifference(){
