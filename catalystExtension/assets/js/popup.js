@@ -7,6 +7,7 @@ window.addEventListener('DOMContentLoaded', function() {
     //current tab url
     chrome.tabs.query({currentWindow: true, active: true}, function(tabs){
         console.log(tabs[0].url);
+        hideTabs(tabs[0].url);
     });
     //Button
     var link = document.getElementById('btnOpenNewTab');
@@ -20,6 +21,15 @@ window.addEventListener('DOMContentLoaded', function() {
 $(".fa-arrow-circle-down").click(function() {
     $("#mealList").slideToggle("fast");
 });
+
+function hideTabs(pageUrl){
+    if(pageUrl.indexOf('https://my.duke.edu/students/dashboard') >= 0){
+        $("#btnOpenNewTab").hide();
+    }
+    else {
+        $("#loadPoints").hide();
+    }
+}
 
 document.getElementById("loadPoints").addEventListener('click', () => {
     console.log("Popup DOM fully loaded and parsed");
@@ -80,6 +90,9 @@ function pointsPerDay(points){
         var pointsRem = points / daysRemaining;
         console.log(pointsRem);
         $('#pointsPerDayText span').text("$" + pointsRem.toFixed(2));
+        var pointsRemWeek = pointsRem * 7;
+        $('#pointsPerDayWeek span').text("$" + pointsRemWeek.toFixed(2));
+        $('#limit').text("$" + pointsRem.toFixed(2));
 }
 
 //Functions used to generate difference in days between now and start of the year
