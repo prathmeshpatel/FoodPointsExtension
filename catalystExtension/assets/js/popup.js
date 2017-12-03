@@ -91,7 +91,7 @@ function pointsPerDay(points){
         console.log(pointsRem);
         $('#pointsPerDayText span').text("$" + pointsRem.toFixed(2));
         var pointsRemWeek = pointsRem * 7;
-        $('#pointsPerDayWeek span').text("$" + pointsRemWeek.toFixed(2));
+        $('#pointsPerWeekText span').text("$" + pointsRemWeek.toFixed(2));
         $('#limit').text("$" + pointsRem.toFixed(2));
 }
 
