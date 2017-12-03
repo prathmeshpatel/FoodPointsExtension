@@ -22,6 +22,14 @@ for(var i = 0; i < 7; i++) {
     $("#days").append(dayPlan);
 }
 
+// removes food item when trash is clicked
+$(".dayMeals").on("click", "span", function(event) {
+    $(this).parent().fadeOut(1000, function() {
+        $(this).remove();
+    });
+    event.stopPropagation();
+});
+
 // created a meal under the day
 $(".dayMeals").on("click", function() {
     var restaurant = $("#meal").val();
@@ -29,12 +37,4 @@ $(".dayMeals").on("click", function() {
     if(restaurant != null && meal != null) {
         $(this).append("<p class=\"nomargin\"><span class=\"delete\"><i class='fa fa-trash'></i></span>" + restaurant + " - " + meal + "</p>");
     }
-});
-
-// removes food item when trash is clicked
-$("p").on("click", "span", function(event) {
-    $(this).parent().fadeOut(1000, function() {
-        $(this).remove();
-    });
-    event.stopPropagation();
 });
