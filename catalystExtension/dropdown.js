@@ -8,6 +8,7 @@ weekday[4] = "Thursday";
 weekday[5] = "Friday";
 weekday[6] = "Saturday";
 
+// creates a week's worth of days starting from the current day
 for(var i = 0; i < 7; i++) {
     var d = new Date();
     var dayPlan = "<div class=\"dayContainer\">";
@@ -21,12 +22,19 @@ for(var i = 0; i < 7; i++) {
     $("#days").append(dayPlan);
 }
 
+// created a meal under the day
 $(".dayMeals").on("click", function() {
     var restaurant = $("#meal").val();
     var meal = $("#category").val();
     if(restaurant != null && meal != null) {
-        $(this).append("<p>" + restaurant + " - " + meal + "</p>");
+        $(this).append("<p class=\"nomargin\"><span class=\"delete\"><i class='fa fa-trash'></i></span>" + restaurant + " - " + meal + "</p>");
     }
 });
 
-$("td").addClass("nopadding");
+// removes food item when trash is clicked
+$("p").on("click", "span", function(event) {
+    $(this).parent().fadeOut(1000, function() {
+        $(this).remove();
+    });
+    event.stopPropagation();
+});

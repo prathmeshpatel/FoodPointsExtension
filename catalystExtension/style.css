@@ -116,7 +116,7 @@ html, body, div, h1,ul, li {
 			transition-delay: 0.25s;
 			content: '';
 			display: block;
-			background-color: #000;
+			/*background-color: #000;*/
 			height: 100%;
 			left: 0;
 			opacity: 0.65;

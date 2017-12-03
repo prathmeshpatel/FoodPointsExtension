@@ -27,6 +27,7 @@ var mealsByCategory = {
     }
 </script>
 <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+<link rel="stylesheet" href="style.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
 
@@ -37,6 +38,17 @@ var mealsByCategory = {
   </script>
 </head>
 <body>
+    <section id="main">
+    <section id="banner">
+    <div class="inner">
+      <h1>Food Points Manager</h1>
+      <p>Choose your meal plans</p>
+      <ul class="actions">
+        <li><a href="#meal" class="button alt scrolly big">Continue</a></li>
+      </ul>
+    </div>
+  </section>
+  </section>
   <select name="meal" id="meal" onChange="changecat(this.value);">
     <option value="" disabled selected>Select</option>
     <option value="A">Au Bon Pain</option>
