@@ -1,9 +1,26 @@
 {
   "manifest_version": 2,
-  "name": "Test Extension",
+  "name": "Food Points Tracker",
+  "description": "This extension tracks your overall food points.",
   "version": "1.0",
+  // "icons": {
+  // },
 
   "browser_action": {
-      "default_popup": "popup.html"
-  }
- }
+    // "default_icon": "",
+    "default_popup": "popup.html"
+  },
+
+  // "background": {
+  //   "scripts": ["eventPage.js"],
+  //   "persistent": false
+  // },
+
+  "permissions": [
+          "storage",
+          "notifications",
+          "contextMenus"
+        ],
+
+  // "options_page": "options.html"
+}
