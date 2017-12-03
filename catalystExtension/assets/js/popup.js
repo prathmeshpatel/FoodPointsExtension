@@ -10,7 +10,7 @@ window.addEventListener('DOMContentLoaded', function() {
         console.log(tabs[0].url);
         pageUrl = tabs[0].url;
     });
-    if(pageUrl.indexOf('https://my.duke.edu/students/dashboard'){
+    if(pageUrl.indexOf('https://my.duke.edu/students/dashboard') >= 0){
        $("#btnOpenNewTab").hide();
     }
     else {
