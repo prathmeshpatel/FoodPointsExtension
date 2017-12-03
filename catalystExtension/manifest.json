@@ -5,13 +5,13 @@
   "version": "1.0",
   // "icons": {
   // },
-    "content_scripts": [
+  "content_scripts": [
         {
             "matches": [
-                "<all_urls>"
+                "http://my.duke.edu/"
             ],
             "js": [
-                "jquery-3.2.1.min.js",
+                "assets/js/lib/jquery-3.2.1.min.js",
                 "content.js"
             ]
         }
