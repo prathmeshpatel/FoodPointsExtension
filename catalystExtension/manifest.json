@@ -4,9 +4,6 @@
   "name": "Food Points tracker",
   "description": "This extension tracks your overall food points.",
   "version": "1.0",
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
 
   "content_scripts": [
         {
@@ -19,33 +16,24 @@
             ]
         }
    ],
-=======
   // "icons": {
   //   "128": "icon128.png",
   //   "48": "icon48.png",
   //   "16": "icon16.png"
   // },
->>>>>>> d9df9b467ef99bd1e63f8b395e91588c601350ac
->>>>>>> b6ff1660c73be7fd324e0a7273d2ca4e6632918f
 
   "browser_action": {
     "default_popup": "popup.html"
   },
 
   "permissions": [
-<<<<<<< HEAD
-          "activeTab",
-          "<all_urls>",
-=======
-<<<<<<< HEAD
-
+        "activeTab",
+        "<all_urls>",
         "storage",
         "notifications",
         "contextMenus"
     ]
 }
-=======
->>>>>>> b6ff1660c73be7fd324e0a7273d2ca4e6632918f
           "storage",
           "notifications",
           "contextMenus"
@@ -53,4 +41,3 @@
 
   "options_page": "options1.html"
 }
->>>>>>> d9df9b467ef99bd1e63f8b395e91588c601350ac
