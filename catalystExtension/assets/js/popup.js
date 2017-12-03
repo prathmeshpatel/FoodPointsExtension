@@ -19,24 +19,25 @@ $(".fa-arrow-circle-down").click(function() {
     $("#mealList").slideToggle("fast");
 });
 
-function setDOMInfo(info) {
-  document.getElementById('loadPoints').textContent  = info;
-}
+document.getElementById("loadPoints).addEventListener('click', () => {
+    console.log("Popup DOM fully loaded and parsed");
 
-window.addEventListener('DOMContentLoaded', function () {
-  // ...query for the active tab...
-  chrome.tabs.query({
-    active: true,
-    currentWindow: true
-  }, function (tabs) {
-    // ...and send a request for the DOM info...
-    chrome.tabs.sendMessage(
-        tabs[0].id,
-        {from: 'popup', subject: 'DOMInfo'},
-        // ...also specifying a callback to be called 
-        //    from the receiving end (content script)
-        setDOMInfo);
-  });
+    function modifyDOM() {
+        //You can play with your DOM here or check URL against your regex
+        console.log('Tab script:');
+        console.log(document.body);
+        var elements = document.getElementsByTagName("TD");
+        return elements[1].innerHTML;;
+    }
+
+    //We have permission to access the activeTab, so we can call chrome.tabs.executeScript:
+    chrome.tabs.executeScript({
+        code: '(' + modifyDOM + ')();' //argument here is a string but function.toString() returns function's code
+    }, (results) => {
+        //Here we have just the innerHTML and not DOM structure
+        console.log('Popup script:')
+        console.log(results[0]);
+    });
 });
 
 //Functions used to generate difference in days between now and start of the year
