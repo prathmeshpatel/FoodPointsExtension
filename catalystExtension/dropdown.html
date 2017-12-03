@@ -1,10 +1,18 @@
 <html>
 <head>
+  <title>Food Point Manager</title>
 <script type="text/javascript">
 var mealsByCategory = {
-    A: ["Soup", "Juice", "Tea", "Others"],
-    B: ["Soup", "Juice", "Water", "Others"],
-    C: ["Soup", "Juice", "Coffee", "Tea", "Others"]
+    A: ["EGG WHITES AU-BON-PAIN-SLIDE CHEDDAR", "EGG WHITES, CHEDDAR AND AVOCADO", "2 EGGS AND CHEDDAR SANDWICH", "SMOKED SALMON WASABI", "CHICKEN COBB WITH AVOCADO", "VEGETARIAN DELUXE", "CHICKEN CAESAR ASIAGO", "THAI PEANUT CHICKEN"],
+    B: ["SMOOTHIES AND JUICES", "COFFEE", "FRAPPES", "CREPES", "PANNINIS"],
+    C: ["Scrambled Eggs", "Grits or Potatoes", "Bacon or Sausage", "Zucchini Parmesan", "Dad’s Fish Stew", "Sauteed Kale"],
+    D: ["MAKE YOUR OWN BOWL", "GINGER CHICKEN", "SESAME CHICKEN", "BULGOGI", "DUMPLINGS & SMALL BITES", "POKE BOWL", "RAMEN"],
+    E: ["GARDEN SALAD", "MISO SOUP", "EDAMAME", "SEAWEED SALAD", "DELUXE SASHIMI BOWL"],
+    F: ["IL FORNO WOOD-FIRED ARTISAN PIZZAS", "DESIGN YOUR OWN PIZZA", "PASTA YOUR WAY"],
+    G: ["JB’S FLANK STEAK", "COAL BRAISED BEEF BRISKET", "PRIME RIB AU JUS", "BONE IN PORK CHOP"],
+    H: ["ESPRESSO", "COFFEE", "TEAS, ETC"],
+    I: ["BURGERS", "FISH", "SALADS", "SOUPS", "BUILD YOUR OWN PIZZA"],
+    J: ["Egg McMuffin", "Egg White Delight", "Hamburger", "Cheeseburger", "Grilled Onion Cheddar", "Big Mac", "Filet-O-Fish", "McDouble"]
 }
 
     function changecat(value) {
@@ -31,9 +39,16 @@ var mealsByCategory = {
 <body>
   <select name="meal" id="meal" onChange="changecat(this.value);">
     <option value="" disabled selected>Select</option>
-    <option value="A">A</option>
-    <option value="B">B</option>
-    <option value="C">C</option>
+    <option value="A">Au Bon Pain</option>
+    <option value="B">Cafe</option>
+    <option value="C">Divinity Cafe</option>
+    <option value="D">Ginger & Soy</option>
+    <option value="E">Gyotaku</option>
+    <option value="F">Il Forno</option>
+    <option value="G">JB's Roasts and Chops</option>
+    <option value="H">Joe Van Gogh</option>
+    <option value="I">Loop Pizza Grill</option>
+    <option value="J">McDonald's</option>
 </select>
 <select name="category" id="category">
     <option value="" disabled selected>Select</option>
@@ -44,3 +59,4 @@ var mealsByCategory = {
 </form>
 </body>
 </html>
+

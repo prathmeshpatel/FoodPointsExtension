@@ -14,6 +14,7 @@ window.addEventListener('DOMContentLoaded', function() {
         chrome.tabs.create({ url: newURL });
         var elements = document.getElementsByTagName("TD");
         var currentPoints = elements[1].innerHTML;
+        alert(currentPoints);
         $("#numPoints span").text(currentPoints);
     });
 });
