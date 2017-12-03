@@ -8,6 +8,8 @@ weekday[4] = "Thursday";
 weekday[5] = "Friday";
 weekday[6] = "Saturday";
 
+var weeklyCost = 0;
+
 // creates a week's worth of days starting from the current day
 for(var i = 0; i < 7; i++) {
     var d = new Date();
@@ -37,4 +39,6 @@ $(".dayMeals").on("click", function() {
     if(restaurant != null && meal != null) {
         $(this).append("<p class=\"nomargin\"><span class=\"delete\"><i class='fa fa-trash'></i></span>" + restaurant + " - " + meal + "</p>");
     }
+    totalCost += mealsByCategory[$("#meal").val()][$("#category").val()];
+    $("#weeklySpending").text(totalCost);
 });
