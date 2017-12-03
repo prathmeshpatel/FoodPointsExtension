@@ -39,8 +39,8 @@ document.getElementById("loadPoints").addEventListener('click', () => {
         //convert points to float
         var pointStr = results[0].replace('$','');
         var points = parseFloat(pointStr);
-        calculateTargetPointsDay(results[0]);
-        pointsPerDay(results[0]);
+        calculateTargetPointsDay(points);
+        pointsPerDay(points);
     });
 });
 
@@ -56,6 +56,7 @@ function calculateTargetPointsDay(points){
         var totalPoints = plans[currentPlan];
         var pointsPerDay = totalPoints / 109;
         var targetPoints = totalPoints - getDateDifference() * pointsPerDay;
+        console.log(targetPoints);
         if(targetPoints>points){
             $('#onTargetText span').text("You're above the target amount");
             $('#onTargetText span').css('color', 'green');
