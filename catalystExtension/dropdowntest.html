@@ -1,0 +1,50 @@
+<html>
+<head>
+<script type="text/javascript">
+var mealsByCategory = {
+    A: ["Soup", "Juice", "Tea", "Others"],
+    B: ["Soup", "Juice", "Water", "Others"],
+    C: ["Soup", "Juice", "Coffee", "Tea", "Others"]
+}
+
+    function changecat(value) {
+        if (value.length == 0) document.getElementById("category").innerHTML = "<option></option>";
+        else {
+            var catOptions = "";
+            for (categoryId in mealsByCategory[value]) {
+                catOptions += "<option>" + mealsByCategory[value][categoryId] + "</option>";
+            }
+            document.getElementById("category").innerHTML = catOptions;
+        }
+    }
+</script>
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+<link rel="stylesheet" href="dropdown.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+
+  <script>
+  $(document).ready(function() {
+    $("#datepicker").datepicker();
+  });
+  </script>
+</head>
+<body>
+  <select name="meal" id="meal" onChange="changecat(this.value);">
+    <option value="" disabled selected>Select</option>
+    <option value="A">A</option>
+    <option value="B">B</option>
+    <option value="C">C</option>
+</select>
+<select name="category" id="category">
+    <option value="" disabled selected>Select</option>
+</select>
+
+<form>
+    <input id="datepicker" />
+</form>
+<table id="calendar">
+</table>
+<script src="dropdown.js" charset="utf-8"></script>
+</body>
+</html>
