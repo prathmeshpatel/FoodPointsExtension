@@ -33,7 +33,7 @@ body.is-loading *, body.is-loading *:before, body.is-loading *:after {
 
 /*bulk of the app*/
 #title {
-    color: white;
+    color: rgb(255, 239, 213);
     font-size: 50px;
     text-align: center;
 
@@ -41,7 +41,7 @@ body.is-loading *, body.is-loading *:before, body.is-loading *:after {
 
 .jumbotron {
     margin-bottom: 0;
-    background: black;
+    background: rgb(53,53,53);
     padding-bottom: 32px;
     padding-top: 32px;
 
@@ -58,13 +58,20 @@ body.is-loading *, body.is-loading *:before, body.is-loading *:after {
 /*#cutLines {
     width: 75%;
 }*/
+select {
+    width: 33%;
+    background: rgb(255, 239, 213);
+    height: 50%;
+    margin-top: 20px;
+    color: rgb(53,53,53);
+}
 
 #footer {
     position: fixed;
     bottom: 0;
     width: 100%;
     height: 75px;
-    background: black;
+    background: rgb(53,53,53);
 }
 
 #weeklySpending {
