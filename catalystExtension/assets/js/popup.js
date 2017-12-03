@@ -36,6 +36,11 @@ document.getElementById("loadPoints").addEventListener('click', () => {
         console.log('Popup script:')
         console.log(results[0]);
         editContent(results[0]);
+        //convert points to float
+        var pointStr = results[0].replace('$','');
+        var points = parseFloat(pointStr);
+        calculateTargetPointsDay(results[0]);
+        pointsPerDay(results[0]);
     });
 });
 
@@ -43,13 +48,7 @@ function editContent(str){
         $('#numPoints span').text(str);
 }
 
-function updatePointsPerDay(points){
-        var daysRemaining = 109 - getDateDifference();
-        var pointsRem = points / daysRemaining;
-    return pointsRem;
-}
-
-function calculateTargetPointsDay(){
+function calculateTargetPointsDay(points){
         var plans = {"A": 2340.28, "B": 2806.83, "C": 3107.83, "D": 3334.65, "E": 3636.73, "F": 766.48, "H": 490.20, "I": 566.53,
             "J": 1655.50};
         var e = document.getElementById("choosePlanBox");
@@ -57,7 +56,20 @@ function calculateTargetPointsDay(){
         var totalPoints = plans[currentPlan];
         var pointsPerDay = totalPoints / 109;
         var targetPoints = totalPoints - getDateDifference() * pointsPerDay;
-    return targetPoints;
+        if(targetPoints>points){
+            $('#onTargetText span').text("You're above the target amount");
+            $('#onTargetText span').css('color', 'green');
+        }
+        else if(targetPoints<points){
+            $('#onTargetText span').text("You're below the target amount");
+            $('#onTargetText span').css('color', 'red');
+        }
+}
+
+function pointsPerDay(points){
+        var daysRemaining = 109 - getDateDifference();
+        var pointsRem = points / daysRemaining;
+        $('#pointsPerDayText span').text("$" + pointsRem.toFixed(2));
 }
 
 //Functions used to generate difference in days between now and start of the year
