@@ -58,11 +58,11 @@ function calculateTargetPointsDay(points){
         var pointsPerDay = totalPoints / 109;
         var targetPoints = totalPoints - getDateDifference() * pointsPerDay;
         console.log(targetPoints);
-        if(targetPoints>points){
+        if(targetPoints<points){
             $('#onTargetText span').text("You're above the target amount");
             $('#onTargetText span').css('color', 'green');
         }
-        else if(targetPoints<points){
+        else if(targetPoints>points){
             $('#onTargetText span').text("You're below the target amount");
             $('#onTargetText span').css('color', 'red');
         }
@@ -70,7 +70,9 @@ function calculateTargetPointsDay(points){
 
 function pointsPerDay(points){
         var daysRemaining = 109 - getDateDifference();
+        console.log(daysRemaining);
         var pointsRem = points / daysRemaining;
+        console.log(pointsRem);
         $('#pointsPerDayText span').text("$" + pointsRem.toFixed(2));
 }
 
