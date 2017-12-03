@@ -7,7 +7,9 @@ for(var i = 0; i < 6; i++) {
 $("td").on("click", function() {
     var restaurant = $("#meal").val();
     var meal = $("#category").val();
-    $(this).append("<p>" + restaurant + " - " + meal + "</p>");
+    if(restaurant != null && meal != null) {
+        $(this).append("<p>" + restaurant + " - " + meal + "</p>");
+    }
 });
 
 $("td").addClass("nopadding");
